@@ -18,6 +18,14 @@
 		E2A178F027AC7A90001E3268 /* PostGrotesk-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2A178EE27AC7A90001E3268 /* PostGrotesk-Bold.otf */; };
 		E2A178F127AC7A90001E3268 /* PostGrotesk-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2A178EF27AC7A90001E3268 /* PostGrotesk-Book.otf */; };
 		E2A178F527AC7B00001E3268 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178F427AC7B00001E3268 /* UIFont+Extension.swift */; };
+		E2A178F827AC7CB6001E3268 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E2A178F727AC7CB6001E3268 /* Alamofire */; };
+		E2A1790027AC7D2A001E3268 /* ImdbFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178FF27AC7D2A001E3268 /* ImdbFetchable.swift */; };
+		E2A1790327AC7E37001E3268 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E2A1790227AC7E37001E3268 /* RxSwift */; };
+		E2A1790627AC7E7A001E3268 /* MovieCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790527AC7E7A001E3268 /* MovieCast.swift */; };
+		E2A1790827AC7E91001E3268 /* MovieActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790727AC7E91001E3268 /* MovieActor.swift */; };
+		E2A1790A27AC7F35001E3268 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790927AC7F35001E3268 /* ApiClient.swift */; };
+		E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */; };
+		E2A2510B27AC8237003E78C5 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2510A27AC8237003E78C5 /* ApiConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,12 @@
 		E2A178EE27AC7A90001E3268 /* PostGrotesk-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PostGrotesk-Bold.otf"; sourceTree = "<group>"; };
 		E2A178EF27AC7A90001E3268 /* PostGrotesk-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PostGrotesk-Book.otf"; sourceTree = "<group>"; };
 		E2A178F427AC7B00001E3268 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		E2A178FF27AC7D2A001E3268 /* ImdbFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImdbFetchable.swift; sourceTree = "<group>"; };
+		E2A1790527AC7E7A001E3268 /* MovieCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCast.swift; sourceTree = "<group>"; };
+		E2A1790727AC7E91001E3268 /* MovieActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActor.swift; sourceTree = "<group>"; };
+		E2A1790927AC7F35001E3268 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		E2A2510A27AC8237003E78C5 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A1790327AC7E37001E3268 /* RxSwift in Frameworks */,
+				E2A178F827AC7CB6001E3268 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +121,8 @@
 			children = (
 				E2A178B827AC75CD001E3268 /* AppDelegate.swift */,
 				E2A178BA27AC75CD001E3268 /* SceneDelegate.swift */,
+				E2A178FE27AC7CEE001E3268 /* API */,
+				E2A1790427AC7E58001E3268 /* Domain */,
 				E2A178F227AC7ADA001E3268 /* Extension */,
 				E2A178E927AC76CF001E3268 /* Resources */,
 				E2A178E827AC76AC001E3268 /* ViewControllers */,
@@ -181,6 +199,26 @@
 			path = UIFont;
 			sourceTree = "<group>";
 		};
+		E2A178FE27AC7CEE001E3268 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E2A178FF27AC7D2A001E3268 /* ImdbFetchable.swift */,
+				E2A1790927AC7F35001E3268 /* ApiClient.swift */,
+				E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */,
+				E2A2510A27AC8237003E78C5 /* ApiConfig.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E2A1790427AC7E58001E3268 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E2A1790527AC7E7A001E3268 /* MovieCast.swift */,
+				E2A1790727AC7E91001E3268 /* MovieActor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,6 +235,10 @@
 			dependencies = (
 			);
 			name = ImdbApp;
+			packageProductDependencies = (
+				E2A178F727AC7CB6001E3268 /* Alamofire */,
+				E2A1790227AC7E37001E3268 /* RxSwift */,
+			);
 			productName = ImdbApp;
 			productReference = E2A178B527AC75CD001E3268 /* ImdbApp.app */;
 			productType = "com.apple.product-type.application";
@@ -269,6 +311,10 @@
 				Base,
 			);
 			mainGroup = E2A178AC27AC75CD001E3268;
+			packageReferences = (
+				E2A178F627AC7CB6001E3268 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E2A1790127AC7E37001E3268 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = E2A178B627AC75CD001E3268 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -313,8 +359,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A2510B27AC8237003E78C5 /* ApiConfig.swift in Sources */,
 				E2A178BD27AC75CD001E3268 /* MainViewController.swift in Sources */,
 				E2A178B927AC75CD001E3268 /* AppDelegate.swift in Sources */,
+				E2A1790827AC7E91001E3268 /* MovieActor.swift in Sources */,
+				E2A1790A27AC7F35001E3268 /* ApiClient.swift in Sources */,
+				E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */,
+				E2A1790027AC7D2A001E3268 /* ImdbFetchable.swift in Sources */,
+				E2A1790627AC7E7A001E3268 /* MovieCast.swift in Sources */,
 				E2A178F527AC7B00001E3268 /* UIFont+Extension.swift in Sources */,
 				E2A178BB27AC75CD001E3268 /* SceneDelegate.swift in Sources */,
 			);
@@ -655,6 +707,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E2A178F627AC7CB6001E3268 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		E2A1790127AC7E37001E3268 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E2A178F727AC7CB6001E3268 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2A178F627AC7CB6001E3268 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E2A1790227AC7E37001E3268 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2A1790127AC7E37001E3268 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E2A178AD27AC75CD001E3268 /* Project object */;
 }
