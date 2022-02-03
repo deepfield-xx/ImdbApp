@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let mainViewController = MainViewController(nibName: nil, bundle: nil)
+        let mainViewController = MainViewController(dependencies: Dependencies())
                 
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = mainViewController

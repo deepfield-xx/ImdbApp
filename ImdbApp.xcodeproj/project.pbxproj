@@ -26,6 +26,7 @@
 		E2A1790A27AC7F35001E3268 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790927AC7F35001E3268 /* ApiClient.swift */; };
 		E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */; };
 		E2A2510B27AC8237003E78C5 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2510A27AC8237003E78C5 /* ApiConfig.swift */; };
+		E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2510D27AC8BB6003E78C5 /* Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E2A1790927AC7F35001E3268 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		E2A2510A27AC8237003E78C5 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		E2A2510D27AC8BB6003E78C5 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				E2A178B827AC75CD001E3268 /* AppDelegate.swift */,
 				E2A178BA27AC75CD001E3268 /* SceneDelegate.swift */,
 				E2A178FE27AC7CEE001E3268 /* API */,
+				E2A2510C27AC8BA4003E78C5 /* Dependencies */,
 				E2A1790427AC7E58001E3268 /* Domain */,
 				E2A178F227AC7ADA001E3268 /* Extension */,
 				E2A178E927AC76CF001E3268 /* Resources */,
@@ -169,6 +172,7 @@
 		E2A178EC27AC7941001E3268 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E2A2510F27AC900E003E78C5 /* View */,
 				E2A178BC27AC75CD001E3268 /* MainViewController.swift */,
 			);
 			path = MainViewController;
@@ -217,6 +221,21 @@
 				E2A1790727AC7E91001E3268 /* MovieActor.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		E2A2510C27AC8BA4003E78C5 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2510D27AC8BB6003E78C5 /* Dependencies.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		E2A2510F27AC900E003E78C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +384,7 @@
 				E2A1790827AC7E91001E3268 /* MovieActor.swift in Sources */,
 				E2A1790A27AC7F35001E3268 /* ApiClient.swift in Sources */,
 				E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */,
+				E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */,
 				E2A1790027AC7D2A001E3268 /* ImdbFetchable.swift in Sources */,
 				E2A1790627AC7E7A001E3268 /* MovieCast.swift in Sources */,
 				E2A178F527AC7B00001E3268 /* UIFont+Extension.swift in Sources */,
