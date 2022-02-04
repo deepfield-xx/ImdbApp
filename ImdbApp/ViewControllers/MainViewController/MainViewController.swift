@@ -30,16 +30,31 @@ class MainViewController: UIViewController {
     }
     
     private func fetchMovieCast() {
-        dependencies.api.getFullCast(of: "tt1375666")
+        dependencies.api.getFullCast(of: "tt1375666") // Inception
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { cast in
-                print(cast)
+            .subscribe(onNext: { [weak self] cast in
+                self?.addMovieCastView(cast.actors)
             }, onError: { error in
                 print(error)
+                var actors = [MovieActor]()
+                for i in 0..<85 {
+                    actors.append(MovieActor(image: "", name: "", asCharacter: ""))
+                }
+                self.addMovieCastView(actors)
             })
             .disposed(by: disposeBag)
     }
 
-
+    private func addMovieCastView(_ actors: [MovieActor]) {
+        let movieCastView = MovieCastCircleView(actors: actors)
+        movieCastView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(movieCastView)
+        
+        let constraint = [movieCastView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 60),
+                          movieCastView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                          movieCastView.widthAnchor.constraint(equalTo: view.widthAnchor),
+                          movieCastView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30)]
+        NSLayoutConstraint.activate(constraint)
+    }
 }
 

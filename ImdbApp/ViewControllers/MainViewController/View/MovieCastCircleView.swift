@@ -1,0 +1,63 @@
+//
+//  MovieCastCircleView.swift
+//  ImdbApp
+//
+//  Created by Tom on 03/02/2022.
+//
+
+import UIKit
+
+final class MovieCastCircleView: UIView {
+    private let actors: [MovieActor]
+    private var collectionView: UICollectionView!
+    
+    init(actors: [MovieActor]) {
+        self.actors = actors
+        super.init(frame: .zero)
+        
+        setUp()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setUp() {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: MovieCastCircleLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(MovieActorViewCell.self,
+                                forCellWithReuseIdentifier: "MovieActorViewCell")
+        addSubview(collectionView)
+        
+        let constraints = [collectionView.widthAnchor.constraint(equalTo: widthAnchor, constant: -40),
+                           collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor),
+                           collectionView.centerXAnchor.constraint(equalTo: centerXAnchor),
+                           collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)]
+        NSLayoutConstraint.activate(constraints)
+        collectionView.reloadData()
+    }
+}
+
+extension MovieCastCircleView: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieActorViewCell", for: indexPath) as? MovieActorViewCell else {
+            fatalError("Fail to obtain cell for reuseId: MovieActorViewCell")
+        }
+        
+        cell.label?.text = "\(indexPath.row)"
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return actors.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+}

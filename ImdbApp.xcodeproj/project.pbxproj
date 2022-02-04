@@ -27,6 +27,9 @@
 		E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */; };
 		E2A2510B27AC8237003E78C5 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2510A27AC8237003E78C5 /* ApiConfig.swift */; };
 		E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2510D27AC8BB6003E78C5 /* Dependencies.swift */; };
+		E2A2511127AC91AC003E78C5 /* MovieCastCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */; };
+		E2A2511327AC9435003E78C5 /* MovieActorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */; };
+		E2A2511527AC9637003E78C5 /* MovieCastCircleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		E2A2510A27AC8237003E78C5 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		E2A2510D27AC8BB6003E78C5 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastCircleView.swift; sourceTree = "<group>"; };
+		E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorViewCell.swift; sourceTree = "<group>"; };
+		E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastCircleLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +240,9 @@
 		E2A2510F27AC900E003E78C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */,
+				E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */,
+				E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,9 +395,12 @@
 				E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */,
 				E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */,
 				E2A1790027AC7D2A001E3268 /* ImdbFetchable.swift in Sources */,
+				E2A2511127AC91AC003E78C5 /* MovieCastCircleView.swift in Sources */,
 				E2A1790627AC7E7A001E3268 /* MovieCast.swift in Sources */,
 				E2A178F527AC7B00001E3268 /* UIFont+Extension.swift in Sources */,
+				E2A2511327AC9435003E78C5 /* MovieActorViewCell.swift in Sources */,
 				E2A178BB27AC75CD001E3268 /* SceneDelegate.swift in Sources */,
+				E2A2511527AC9637003E78C5 /* MovieCastCircleLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
