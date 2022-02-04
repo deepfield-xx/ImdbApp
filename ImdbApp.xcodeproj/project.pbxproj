@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2664EA427ADECF400CDB3D6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2664EA327ADECF400CDB3D6 /* UIColor+Extension.swift */; };
 		E2A178B927AC75CD001E3268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178B827AC75CD001E3268 /* AppDelegate.swift */; };
 		E2A178BB27AC75CD001E3268 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178BA27AC75CD001E3268 /* SceneDelegate.swift */; };
 		E2A178BD27AC75CD001E3268 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178BC27AC75CD001E3268 /* MainViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E2664EA327ADECF400CDB3D6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E2A178B527AC75CD001E3268 /* ImdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A178B827AC75CD001E3268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A178BA27AC75CD001E3268 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2664EA227ADECDC00CDB3D6 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				E2664EA327ADECF400CDB3D6 /* UIColor+Extension.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		E2A178AC27AC75CD001E3268 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		E2A178F227AC7ADA001E3268 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E2664EA227ADECDC00CDB3D6 /* UIColor */,
 				E2A178F327AC7AEA001E3268 /* UIFont */,
 			);
 			path = Extension;
@@ -396,6 +407,7 @@
 				E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */,
 				E2A1790027AC7D2A001E3268 /* ImdbFetchable.swift in Sources */,
 				E2A2511127AC91AC003E78C5 /* MovieCastCircleView.swift in Sources */,
+				E2664EA427ADECF400CDB3D6 /* UIColor+Extension.swift in Sources */,
 				E2A1790627AC7E7A001E3268 /* MovieCast.swift in Sources */,
 				E2A178F527AC7B00001E3268 /* UIFont+Extension.swift in Sources */,
 				E2A2511327AC9435003E78C5 /* MovieActorViewCell.swift in Sources */,
