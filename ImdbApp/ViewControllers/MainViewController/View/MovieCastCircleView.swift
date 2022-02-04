@@ -39,6 +39,19 @@ final class MovieCastCircleView: UIView {
                            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)]
         NSLayoutConstraint.activate(constraints)
         collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.centerCollectionView(at: IndexPath(item: Int(Double(self.actors.count)/2.0),
+                                                    section: 0),
+                                      animated: false)
+        }
+    }
+        
+    private func centerCollectionView(at indexPath: IndexPath, animated: Bool) {
+        if let attr = self.collectionView.layoutAttributesForItem(at: indexPath) {
+            let position = CGPoint(x: attr.center.x - collectionView.bounds.width/2,
+                                   y: attr.center.y - collectionView.bounds.height/2)
+            collectionView.setContentOffset(position, animated: animated)
+        }
     }
 }
 
@@ -56,8 +69,8 @@ extension MovieCastCircleView: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return actors.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        centerCollectionView(at: indexPath, animated: true)
     }
 }
