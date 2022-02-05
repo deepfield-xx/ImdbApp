@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E259528B27AF24D900E12707 /* MovieActorNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259528A27AF24D900E12707 /* MovieActorNameView.swift */; };
 		E2664EA427ADECF400CDB3D6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2664EA327ADECF400CDB3D6 /* UIColor+Extension.swift */; };
 		E2A178B927AC75CD001E3268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178B827AC75CD001E3268 /* AppDelegate.swift */; };
 		E2A178BB27AC75CD001E3268 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178BA27AC75CD001E3268 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E259528A27AF24D900E12707 /* MovieActorNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorNameView.swift; sourceTree = "<group>"; };
 		E2664EA327ADECF400CDB3D6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E2A178B527AC75CD001E3268 /* ImdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A178B827AC75CD001E3268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -251,9 +253,10 @@
 		E2A2510F27AC900E003E78C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E259528A27AF24D900E12707 /* MovieActorNameView.swift */,
 				E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */,
-				E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */,
 				E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */,
+				E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */,
 				E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */,
 				E2A1790027AC7D2A001E3268 /* ImdbFetchable.swift in Sources */,
+				E259528B27AF24D900E12707 /* MovieActorNameView.swift in Sources */,
 				E2A2511127AC91AC003E78C5 /* MovieCastCircleView.swift in Sources */,
 				E2664EA427ADECF400CDB3D6 /* UIColor+Extension.swift in Sources */,
 				E2A1790627AC7E7A001E3268 /* MovieCast.swift in Sources */,
