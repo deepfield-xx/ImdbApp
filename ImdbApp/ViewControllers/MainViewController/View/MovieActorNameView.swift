@@ -39,17 +39,24 @@ final class MovieActorNameView: UIView {
         let constraints = [actorNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 29),
                            actorNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
                            actorNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
-                           actorNameLabel.bottomAnchor.constraint(equalTo: actorRoleLabel.topAnchor, constant: 11),
+                           actorNameLabel.bottomAnchor.constraint(equalTo: actorRoleLabel.topAnchor, constant: -11),
                            actorRoleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
                            actorRoleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10)]
         NSLayoutConstraint.activate(constraints)
     }
     
-    func updateActorName(_ name: String) {
+    func updateActor(name: String) {
         actorNameLabel.text = name
     }
     
-    func updateActorAs(_ role: String) {
+    func updateActor(role: String) {
         actorRoleLabel.text = role
+    }
+}
+
+extension MovieActorNameView: MovieCastCircleViewDelegate {
+    func movieCastCircleViewDidSelect(_ actor: MovieActor) {
+        updateActor(name: actor.name)
+        updateActor(role: actor.asCharacter)
     }
 }

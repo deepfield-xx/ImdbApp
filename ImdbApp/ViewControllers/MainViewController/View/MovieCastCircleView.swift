@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol MovieCastCircleViewDelegate: AnyObject {
+    func movieCastCircleViewDidSelect(_ actor: MovieActor)
+}
+
 final class MovieCastCircleView: UIView {
     private let actors: [MovieActor]
     private var collectionView: UICollectionView!
+    
+    weak var delegate: MovieCastCircleViewDelegate?
     
     init(actors: [MovieActor]) {
         self.actors = actors
@@ -72,5 +78,6 @@ extension MovieCastCircleView: UICollectionViewDataSource, UICollectionViewDeleg
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         centerCollectionView(at: indexPath, animated: true)
+        delegate?.movieCastCircleViewDidSelect(actors[indexPath.row])
     }
 }
