@@ -26,32 +26,21 @@ final class MovieCastCircleLayout: UICollectionViewLayout {
         return CGPoint(x: cViewSize.width / 2.0, y: cViewSize.height / 2.0)
     }
     
-    var a: CGFloat {
-        return 2.5 * cViewSize.width
-    }
-    
-    var b: CGFloat {
-        return 2.5 * cViewSize.height
-    }
-    
-    let c: CGFloat = 20
-    
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
     override var collectionViewContentSize: CGSize   {
         return CGSize(width: itemSize * CGFloat(cols+1) + cViewSize.width * 0.5,
-                      height: itemSize * CGFloat(rows+1) + cViewSize.height * 0.5)
+                      height: itemSize * CGFloat(rows) + cViewSize.height * 0.5)
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var attributes = [UICollectionViewLayoutAttributes]()
-        var itemDistance = [Int: Float]()
         for i in 0 ..< cellCount {
             let indexPath = IndexPath(item: i, section: 0)
-            let itemAttributes = layoutAttributesForItem(at: indexPath)!
-            attributes.append(itemAttributes)
+            let itemAttributes = layoutAttributesForItem(at: indexPath)
+            attributes.append(itemAttributes!)
         }
 
         return attributes
@@ -77,13 +66,13 @@ final class MovieCastCircleLayout: UICollectionViewLayout {
         y -= center.y + CGFloat(offset.y)
         let dist = CGFloat(sqrtf(Float(x*x + y*y)))
          
-        x = -x*x/(a*a)
-        y = -y*y/(b*b)
-        var z = c * (x+y) + 1
-        z = z < 0.0 ? 0.0 : z
-//        z = z / (0.9 + dist/250)
-         
-        attributes.transform = CGAffineTransform(scaleX: z, y: z)
+        let exp = dist < 20 ? 0.0 : (dist - 20)/50.0;
+        let scale = pow(0.5, exp);
+        
+        let scaleTr = CGAffineTransform(scaleX: scale, y: scale)
+        let translaeTr = CGAffineTransform(translationX: (scale-1)*x / 2.5, y: (scale-1)*y / 2.5)
+        
+        attributes.transform = scaleTr.concatenating(translaeTr)
         attributes.size = CGSize(width: self.itemSize, height: self.itemSize)
          
         return attributes
