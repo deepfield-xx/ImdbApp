@@ -33,6 +33,7 @@
 		E2A2511127AC91AC003E78C5 /* MovieCastCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */; };
 		E2A2511327AC9435003E78C5 /* MovieActorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */; };
 		E2A2511527AC9637003E78C5 /* MovieCastCircleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */; };
+		E2AF1CDB27B016320040ED39 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF1CDA27B016320040ED39 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastCircleView.swift; sourceTree = "<group>"; };
 		E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorViewCell.swift; sourceTree = "<group>"; };
 		E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastCircleLayout.swift; sourceTree = "<group>"; };
+		E2AF1CDA27B016320040ED39 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 				E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */,
 				E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */,
 				E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */,
+				E2AF1CDA27B016320040ED39 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				E2A178B927AC75CD001E3268 /* AppDelegate.swift in Sources */,
 				E2A1790827AC7E91001E3268 /* MovieActor.swift in Sources */,
 				E2A1790A27AC7F35001E3268 /* ApiClient.swift in Sources */,
+				E2AF1CDB27B016320040ED39 /* GradientView.swift in Sources */,
 				E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */,
 				E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */,
 				E2A1790027AC7D2A001E3268 /* ImdbFetchable.swift in Sources */,
