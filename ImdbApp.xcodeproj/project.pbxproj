@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E259528B27AF24D900E12707 /* MovieActorNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E259528A27AF24D900E12707 /* MovieActorNameView.swift */; };
+		E259528E27AF308300E12707 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E259528D27AF308300E12707 /* Kingfisher */; };
 		E2664EA427ADECF400CDB3D6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2664EA327ADECF400CDB3D6 /* UIColor+Extension.swift */; };
 		E2A178B927AC75CD001E3268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178B827AC75CD001E3268 /* AppDelegate.swift */; };
 		E2A178BB27AC75CD001E3268 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A178BA27AC75CD001E3268 /* SceneDelegate.swift */; };
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E259528E27AF308300E12707 /* Kingfisher in Frameworks */,
 				E2A1790327AC7E37001E3268 /* RxSwift in Frameworks */,
 				E2A178F827AC7CB6001E3268 /* Alamofire in Frameworks */,
 			);
@@ -280,6 +282,7 @@
 			packageProductDependencies = (
 				E2A178F727AC7CB6001E3268 /* Alamofire */,
 				E2A1790227AC7E37001E3268 /* RxSwift */,
+				E259528D27AF308300E12707 /* Kingfisher */,
 			);
 			productName = ImdbApp;
 			productReference = E2A178B527AC75CD001E3268 /* ImdbApp.app */;
@@ -356,6 +359,7 @@
 			packageReferences = (
 				E2A178F627AC7CB6001E3268 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E2A1790127AC7E37001E3268 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				E259528C27AF308300E12707 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E2A178B627AC75CD001E3268 /* Products */;
 			projectDirPath = "";
@@ -757,6 +761,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E259528C27AF308300E12707 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E2A178F627AC7CB6001E3268 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -776,6 +788,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E259528D27AF308300E12707 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E259528C27AF308300E12707 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		E2A178F727AC7CB6001E3268 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E2A178F627AC7CB6001E3268 /* XCRemoteSwiftPackageReference "Alamofire" */;
