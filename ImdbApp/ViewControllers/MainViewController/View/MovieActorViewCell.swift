@@ -23,10 +23,6 @@ final class MovieActorViewCell: UICollectionViewCell {
         setUp()
     }
     
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -48,12 +44,13 @@ final class MovieActorViewCell: UICollectionViewCell {
     
     func loadActorImage(_ path: String) {
         let url = URL(string: path)
-        
+
         if ImageCache.default.isCached(forKey: path) {
             imageMask.transform = CATransform3DIdentity
             imageView.kf.setImage(with: url)
         } else {
-            imageView.kf.setImage(with: url) { [weak self] result in
+            let processor = DownsamplingImageProcessor(size: imageView.bounds.size)
+            imageView.kf.setImage(with: url, options: [.processor(processor), .scaleFactor(UIScreen.main.scale)]) { [weak self] result in
                 let scaleAnim = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnim.fromValue = 0
                 scaleAnim.toValue = 1
