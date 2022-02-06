@@ -12,7 +12,7 @@ final class MovieCastCircleLayout: UICollectionViewLayout {
     let rows = 10
         
     let interimSpace: CGFloat = 0.0
-    let itemSize: CGFloat = 80
+    let itemSize: CGFloat = 103
     
     var cellCount: Int {
         return cols * rows
@@ -66,7 +66,7 @@ final class MovieCastCircleLayout: UICollectionViewLayout {
         y -= center.y + CGFloat(offset.y)
         let dist = CGFloat(sqrtf(Float(x*x + y*y)))
          
-        let exp = dist < 20 ? 0.0 : (dist - 20)/50.0;
+        let exp = dist < 20 ? 0.0 : (dist - 20)/80.0;
         let scale = pow(0.5, exp);
         
         let scaleTr = CGAffineTransform(scaleX: scale, y: scale)

@@ -18,7 +18,7 @@ final class MovieActorViewCell: UICollectionViewCell {
         backgroundColor = .clear
         
         contentView.layer.cornerRadius = frame.width / 2.0
-        contentView.layer.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.9, alpha: 0.8).cgColor
+        contentView.layer.backgroundColor = UIColor.appYellow.cgColor
         
         setUp()
     }
@@ -28,7 +28,7 @@ final class MovieActorViewCell: UICollectionViewCell {
     }
     
     func setUp() {
-        imageView.frame = bounds.insetBy(dx: 5, dy: 5)
+        imageView.frame = bounds
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = imageView.frame.width / 2.0
