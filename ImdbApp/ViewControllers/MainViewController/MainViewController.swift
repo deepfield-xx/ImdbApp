@@ -36,11 +36,6 @@ class MainViewController: UIViewController {
                 self?.addMovieCastView(cast.actors)
             }, onError: { error in
                 print(error)
-                var actors = [MovieActor]()
-                for i in 0..<85 {
-                    actors.append(MovieActor(image: "", name: "", asCharacter: ""))
-                }
-                self.addMovieCastView(actors)
             })
             .disposed(by: disposeBag)
     }
@@ -50,10 +45,20 @@ class MainViewController: UIViewController {
         movieCastView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(movieCastView)
         
+        let movieActorNameView = MovieActorNameView()
+        movieActorNameView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(movieActorNameView)
+        
+        movieCastView.delegate = movieActorNameView
+        
         let constraint = [movieCastView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 60),
                           movieCastView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                           movieCastView.widthAnchor.constraint(equalTo: view.widthAnchor),
-                          movieCastView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30)]
+                          movieCastView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+                          movieActorNameView.topAnchor.constraint(equalTo: movieCastView.bottomAnchor),
+                          movieActorNameView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                          movieActorNameView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                          movieActorNameView.bottomAnchor.constraint(equalTo: view.bottomAnchor)]
         NSLayoutConstraint.activate(constraint)
     }
 }
