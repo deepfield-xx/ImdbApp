@@ -48,6 +48,22 @@ final class MovieActorViewCell: UICollectionViewCell {
     
     func loadActorImage(_ path: String) {
         let url = URL(string: path)
-        imageView.kf.setImage(with: url)
+        
+        if ImageCache.default.isCached(forKey: path) {
+            imageMask.transform = CATransform3DIdentity
+            imageView.kf.setImage(with: url)
+        } else {
+            imageView.kf.setImage(with: url) { [weak self] result in
+                let scaleAnim = CABasicAnimation(keyPath: "transform.scale")
+                scaleAnim.fromValue = 0
+                scaleAnim.toValue = 1
+                scaleAnim.duration = 0.8
+                scaleAnim.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+                scaleAnim.fillMode = .forwards
+                scaleAnim.isRemovedOnCompletion = false
+                
+                self?.imageMask.add(scaleAnim, forKey: "scaleAnim")
+            }
+        }
     }
 }
