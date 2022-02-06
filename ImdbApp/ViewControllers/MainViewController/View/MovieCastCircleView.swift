@@ -14,6 +14,7 @@ protocol MovieCastCircleViewDelegate: AnyObject {
 final class MovieCastCircleView: UIView {
     private let actors: [MovieActor]
     private var collectionView: UICollectionView!
+    private var gradientOverlay: GradientView!
     
     weak var delegate: MovieCastCircleViewDelegate?
     
@@ -29,9 +30,12 @@ final class MovieCastCircleView: UIView {
     }
     
     private func setUp() {
+        backgroundColor = UIColor.gradientYellow
+        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: MovieCastCircleLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,17 +43,41 @@ final class MovieCastCircleView: UIView {
                                 forCellWithReuseIdentifier: "MovieActorViewCell")
         addSubview(collectionView)
         
+        gradientOverlay = GradientView()
+        gradientOverlay.isUserInteractionEnabled = false
+        gradientOverlay.translatesAutoresizingMaskIntoConstraints = false
+        gradientOverlay.startColor = UIColor.gradientYellow.withAlphaComponent(0)
+        gradientOverlay.endColor = UIColor.gradientYellow
+        gradientOverlay.gradientCenter = CGPoint.zero
+        gradientOverlay.gradientLocation = [0.5, 1]
+        gradientOverlay.radius = 0
+        addSubview(gradientOverlay)
+        
         let constraints = [collectionView.widthAnchor.constraint(equalTo: widthAnchor, constant: -40),
                            collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor),
                            collectionView.centerXAnchor.constraint(equalTo: centerXAnchor),
-                           collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)]
+                           collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+                           gradientOverlay.topAnchor.constraint(equalTo: collectionView.topAnchor),
+                           gradientOverlay.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor),
+                           gradientOverlay.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor),
+                           gradientOverlay.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor)]
         NSLayoutConstraint.activate(constraints)
+        
         collectionView.reloadData()
         DispatchQueue.main.async {
             self.centerCollectionView(at: IndexPath(item: Int(Double(self.actors.count)/2.0),
                                                     section: 0),
                                       animated: false)
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        gradientOverlay.gradientCenter = CGPoint(x: collectionView.bounds.width/2,
+                                                 y: collectionView.bounds.height/2)
+        gradientOverlay.radius = collectionView.bounds.width/2
+        gradientOverlay.setNeedsDisplay()
     }
         
     private func centerCollectionView(at indexPath: IndexPath, animated: Bool) {
@@ -59,6 +87,10 @@ final class MovieCastCircleView: UIView {
             collectionView.setContentOffset(position, animated: animated)
         }
     }
+    
+    private func getOffsetIndex(_ index: Int) -> Int {
+        return (index + Int(actors.count/2) + 1) % actors.count
+    }
 }
 
 extension MovieCastCircleView: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -67,7 +99,9 @@ extension MovieCastCircleView: UICollectionViewDataSource, UICollectionViewDeleg
             fatalError("Fail to obtain cell for reuseId: MovieActorViewCell")
         }
         
-        cell.label?.text = "\(indexPath.row)"
+        let offsetRow = getOffsetIndex(indexPath.row)
+        let actor = actors[offsetRow]
+        cell.loadActorImage(actor.image)
         
         return cell
     }
@@ -78,6 +112,8 @@ extension MovieCastCircleView: UICollectionViewDataSource, UICollectionViewDeleg
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         centerCollectionView(at: indexPath, animated: true)
-        delegate?.movieCastCircleViewDidSelect(actors[indexPath.row])
+        
+        let offsetRow = getOffsetIndex(indexPath.row)
+        delegate?.movieCastCircleViewDidSelect(actors[offsetRow])
     }
 }
