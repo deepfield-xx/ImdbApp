@@ -29,11 +29,11 @@
 		E2A1790A27AC7F35001E3268 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790927AC7F35001E3268 /* ApiClient.swift */; };
 		E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */; };
 		E2A2510B27AC8237003E78C5 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2510A27AC8237003E78C5 /* ApiConfig.swift */; };
-		E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2510D27AC8BB6003E78C5 /* Dependencies.swift */; };
 		E2A2511127AC91AC003E78C5 /* MovieCastCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */; };
 		E2A2511327AC9435003E78C5 /* MovieActorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */; };
 		E2A2511527AC9637003E78C5 /* MovieCastCircleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */; };
 		E2AF1CDB27B016320040ED39 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF1CDA27B016320040ED39 /* GradientView.swift */; };
+		E2AF1CE027B14FEA0040ED39 /* Dependiences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF1CDF27B14FEA0040ED39 /* Dependiences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,11 +77,11 @@
 		E2A1790927AC7F35001E3268 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		E2A1790B27AC7FCA001E3268 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		E2A2510A27AC8237003E78C5 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
-		E2A2510D27AC8BB6003E78C5 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		E2A2511027AC91AC003E78C5 /* MovieCastCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastCircleView.swift; sourceTree = "<group>"; };
 		E2A2511227AC9435003E78C5 /* MovieActorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorViewCell.swift; sourceTree = "<group>"; };
 		E2A2511427AC9637003E78C5 /* MovieCastCircleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastCircleLayout.swift; sourceTree = "<group>"; };
 		E2AF1CDA27B016320040ED39 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		E2AF1CDF27B14FEA0040ED39 /* Dependiences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependiences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +145,8 @@
 			children = (
 				E2A178B827AC75CD001E3268 /* AppDelegate.swift */,
 				E2A178BA27AC75CD001E3268 /* SceneDelegate.swift */,
+				E2AF1CDF27B14FEA0040ED39 /* Dependiences.swift */,
 				E2A178FE27AC7CEE001E3268 /* API */,
-				E2A2510C27AC8BA4003E78C5 /* Dependencies */,
 				E2A1790427AC7E58001E3268 /* Domain */,
 				E2A178F227AC7ADA001E3268 /* Extension */,
 				E2A178E927AC76CF001E3268 /* Resources */,
@@ -244,14 +244,6 @@
 				E2A1790727AC7E91001E3268 /* MovieActor.swift */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		E2A2510C27AC8BA4003E78C5 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				E2A2510D27AC8BB6003E78C5 /* Dependencies.swift */,
-			);
-			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		E2A2510F27AC900E003E78C5 /* View */ = {
@@ -412,10 +404,10 @@
 				E2A178BD27AC75CD001E3268 /* MainViewController.swift in Sources */,
 				E2A178B927AC75CD001E3268 /* AppDelegate.swift in Sources */,
 				E2A1790827AC7E91001E3268 /* MovieActor.swift in Sources */,
+				E2AF1CE027B14FEA0040ED39 /* Dependiences.swift in Sources */,
 				E2A1790A27AC7F35001E3268 /* ApiClient.swift in Sources */,
 				E2AF1CDB27B016320040ED39 /* GradientView.swift in Sources */,
 				E2A1790C27AC7FCB001E3268 /* ApiRouter.swift in Sources */,
-				E2A2510E27AC8BB6003E78C5 /* Dependencies.swift in Sources */,
 				E2A1790027AC7D2A001E3268 /* ImdbFetchable.swift in Sources */,
 				E259528B27AF24D900E12707 /* MovieActorNameView.swift in Sources */,
 				E2A2511127AC91AC003E78C5 /* MovieCastCircleView.swift in Sources */,
